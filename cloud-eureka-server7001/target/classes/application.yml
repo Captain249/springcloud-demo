@@ -12,8 +12,8 @@ eureka:
     service-url:
       #设置与Eureka Server交互的地址 查询服务和注册服务都需要依赖这个地址
       #设置与eureka server交互的地址查询服务和注册服务都 3个的话这里用逗号分割
-      defaultZone: http://eureka7002.com:7002/eureka/
-#      defaultZone: http://eureka7001.com:7001/eureka/ 单机
+#      defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/ #单机
 
 #  server:
 #    #默认开启自我保护模式 true 如果90s没收到客户端的心跳，先不剔除，等待90s后再剔除
