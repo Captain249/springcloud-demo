@@ -1,0 +1,35 @@
+server:
+  port: 3344
+
+#http://localhost:3344/master/config-dev.yml  默认master
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:Captain249/sprincloud-config.git #ssh-keygen -m PEM -t rsa -b 4096 -C "915751828@qq.com"
+          search-paths:
+            - sprincloud-config
+      label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
+
+#curl -X POST "http://localhost:3344/actuator/bus-refresh"
+
+#curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"
